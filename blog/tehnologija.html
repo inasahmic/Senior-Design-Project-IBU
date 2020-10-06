@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Svevijesti</title>
+  
+  <link rel="shorcut icon" type="image/png" href="download.png"/>
+  
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="text-muted">Izvori:</a>
+          <a class="text-muted" href="https://klix.ba/">Klix,</a>
+          <a class="text-muted" href="https://avaz.ba/">Avaz,</a>
+          <a class="text-muted" href="https://ba.n1info.com/">N1,</a>
+          <a class="text-muted" href="https://radiosarajevo.ba/">Radio Sarajevo,</a>
+          <a class="text-muted" href="https://vijesti.ba/">VijestiBa</a>
+          
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="#">Svevijesti.net</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="btn" href="https://mojtv.hr/tv-program/-10/bih.aspx">TV Program</a>
+          <a class="btn" href="http://weather.ba/detaljna-vremenska-prognoza/sarajevo">Vrijeme</a>
+          <a class="btn" href="https://www.cbbh.ba/CurrencyExchange/">Kursna lista</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between navbar-light" style="background-color: gray;">
+        <a class="p-2 text-white" href="index.html">Vijesti</a>
+        <a class="p-2 text-white" href="svijet.html">Svijet</a>
+        <a class="p-2 text-white" href="tehnologija.html">Tehnologija</a>
+        <a class="p-2 text-white" href="sport.html">Sport</a>
+        <a class="p-2 text-white" href="biznis.html">Biznis</a>
+        <a class="p-2 text-white" href="auto.html">Auto</a>
+        <a class="p-2 text-white" href="lifestyle.html">Lifestyle</a>
+               
+      </nav>
+    </div>
+
+
+
+
+    <div class="row mb-2" id="news-cards-list">
+
+      <div class="col-md-6">
+
+      </div>
+    </div>
+  </div>
+
+  <main role="main" class="container">
+    
+
+      
+        
+          <!--<div id='gcw_mainFon1ZBzMd' class='gcw_mainFon1ZBzMd'></div>
+          <a id='gcw_siteFon1ZBzMd' href='https://freecurrencyrates.com/en/'></a>
+          <script>function reloadFon1ZBzMd() {
+              var sc = document.getElementById('scFon1ZBzMd');
+              if (sc) sc.parentNode.removeChild(sc);
+              sc = document.createElement('script');
+              sc.type = 'text/javascript';
+              sc.charset = 'UTF-8';
+              sc.async = true;
+              sc.id = 'scFon1ZBzMd';
+              sc.src = 'https://freecurrencyrates.com/en/widget-vertical?iso=USD-EUR-GBP-JPY-CNY-XUL&df=2&p=Fon1ZBzMd&v=fits&source=fcr&width=245&width_title=0&firstrowvalue=1&thm=A6C9E2,FCFDFD,4297D7,5C9CCC,FFFFFF,C5DBEC,FCFDFD,2E6E9E,000000&title=Currency%20Converter&tzo=-120';
+              var div = document.getElementById('gcw_mainFon1ZBzMd');
+              div.parentNode.insertBefore(sc, div);
+            }
+            reloadFon1ZBzMd(); </script>
+
+          <a class="weatherwidget-io" href="https://forecast7.com/en/43d8618d41/sarajevo/" data-label_1="SARAJEVO"
+            data-label_2="WEATHER" data-theme="original">SARAJEVO WEATHER</a>
+          <script>
+            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+          </script>-->
+
+
+
+
+          <script>
+    inedexvijesti = (arrayVijesti) => {
+
+    }
+
+    fetch('/api/tehno').then(res => res.json()).then(data => {
+      console.log('techno', data);
+      const newsCardsContainer = document.getElementById('news-cards-list');
+      totalHtml = '';
+      Object.keys(data).forEach(tabloid => {
+        data[tabloid].forEach(vijest => {
+          totalHtml += `
+        <div class="col-md-6">
+        <div
+          class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success"></strong>
+            <h3 class="mb-0">${vijest.title}</h3>
+            <div class="mb-1 text-muted"></div>
+            <p class="mb-auto">${vijest.desc || ''}</p>
+            <a href="${vijest.link}" class="stretched-link">Procitajte na stranici</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" style="object-fit: cover" src="${vijest.img || ''}" width="200" height="250" />
+          </div>
+        </div>
+      </div>
+        `
+        })
+      })
+      newsCardsContainer.innerHTML = totalHtml;
+
+    });
+  </script>
+
+</body>
+
+</html>
