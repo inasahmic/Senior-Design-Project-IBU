@@ -1,2 +1,2 @@
 # Inas Ahmic SDP 2020
-# Web application 'Svevijesti' 
+Web application 'Svevijesti' 
